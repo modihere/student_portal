@@ -1,0 +1,84 @@
+form { 
+	width: 1000px; 
+}
+label{
+	width: 9em;
+	float: left;
+	text-align: right;
+	margin-right: 0.5em;
+	display: block
+ }
+ 
+textarea,select {
+  border: none;
+  font-size: 15px;
+  height: auto;
+  margin: 0;
+  outline: 0;
+  padding: 1px;
+  width: 60%;
+  background-color: white;
+  color: #8a97a0;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+  margin-bottom: 10px;
+}
+button {
+  padding: 5px 10px 5px 10px;
+  color: #FFF;
+  background-color: #000080;
+  font-size: 15px;
+  text-align: center;
+  font-style: bold;
+  border-radius: 5px;
+  width: 37%;
+  border: 1px solid #3ac162;
+  border-width: 1px 1px 0.5px;
+  box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
+  margin-bottom: 10px;
+}
+legend {
+  font-size: 1.4em;
+  margin-bottom: 10px;
+}
+.number {
+	background-color: #5fcf80;
+	color: #fff;
+	height: 30px;
+	width: 30px;
+	display: inline-block;
+	font-size: 0.8em;
+	margin-right: 4px;
+	line-height: 30px;
+	text-align: center;
+	text-shadow: 0 1px 0 rgba(255,255,255,0.2);
+	border-radius: 100%;
+}
+h1{
+	font-family: 'Nunito', sans-serif;
+	color: #384047;
+	padding: 10px;}
+form {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 20px 20px;
+    background: #f4f7f8;
+    border-radius: 10px;
+  }
+
+table {
+	width: 100%;
+}
+
+.buttons {
+	display: flex;
+	width: 100%;
+	position: relative;
+	align-items: center;
+	justify-content: center;
+}
+
+button[type=reset], button[type=submit] {
+	flex-direction: row;
+	width: 25%;
+	margin: 20px 10px;
+}

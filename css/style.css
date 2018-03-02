@@ -1,0 +1,146 @@
+			th{
+				text-align: left;
+			}
+
+			header{
+				margin: auto;
+			    width: 50%;
+			}
+
+			body{
+				font-family: cursive;
+				background-image: url("../images/home4.jpg");
+				background-attachment: fixed;
+				background-size: cover;
+				background-repeat: no-repeat;
+				color:#B2BEB5;
+			}
+
+			#personal-details,#academic-details{
+				margin: auto;
+			    width: 50%;
+			    border: 2px solid;
+			    border-radius: 25px;
+			}
+
+			#navbar{
+			    border-radius: 25px;
+			}
+
+			#login{
+				/*font-color:white;*/
+				width: 25%;
+				margin: auto;
+				border: 2px solid;
+			    border-radius: 25px;
+			}
+
+			#submit {
+				text-align: center;
+			}
+
+			#background{
+				width:100%;
+			}
+
+			footer {
+				width: 100%;
+				background: #336699;
+				float: left;
+				margin: 0 0 .5% 0;
+				border-radius: 10px;
+				box-shadow: 5px 5px 10px #202020
+			}	
+
+			table{
+				border-collapse:separate; 
+				border-spacing:0.8em;
+			}
+
+			input{
+				size:50;
+			}
+
+			ul {
+			    list-style-type: none;
+			    margin: 0;
+			    padding: 0;
+			    overflow: hidden;
+			    background-color: #333;
+			}
+
+			h1,h2{
+				text-align: center;
+				text-decoration:underline;			}
+
+			input[type=text],input[type=password],input[type=email] {
+			    padding: 5px 5px;
+			    margin: 8px 0;
+			    border-radius: 50px;
+			    border:none;
+			}
+
+
+			input[type=button], input[type=submit], input[type=reset] {
+			    background-color: black;
+			    border: none;
+			    color: white;
+			    padding: 8px 16px;
+			    margin: 4px 2px;
+			    cursor: pointer;
+			    border-radius: 50px;
+			    border:none;
+			}
+
+			input[type=text]:focus {
+				border-radius: 50px;
+			    border:none;
+			}
+
+			textarea {
+				 border-radius: 50px;
+			    border:none;
+			}
+
+
+			select {
+			    padding: 5px 5px;
+			    border: none;
+			    border-radius: 4px;
+			    background-color: #f1f1f1;
+			}
+
+			li {
+			    float: left;
+			    width:25%;
+			    text-align: center;
+			}
+
+			li a {
+			    display: block;
+			    color: white;
+			    padding: 14px 16px;
+			    text-decoration: none;
+			}
+
+			/* Change the link color to #111 (black) on hover */
+			li a:hover {
+			    background-color: #111;
+			}
+
+			#navbar{
+				float:left;
+				width:80%;
+			}
+
+			#img{
+				float:left;
+			}
+
+
+			#footer {
+			    clear: both;
+			    position: relative;
+			    padding-top: 5px;
+			    height: 3em;
+			}

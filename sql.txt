@@ -1,0 +1,16 @@
+ALTER TABLE `student_details` ADD `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY;
+
+
+
+
+CREATE TABLE `my_app`.`student_details` ( `f_name` VARCHAR(100) NOT NULL , `l_name` VARCHAR(100) NOT NULL , `date` DATE NOT NULL , `age` INT(10) NOT NULL , `m_no` BIGINT NOT NULL , `p_addr` VARCHAR(100) NOT NULL , `pm_addr` VARCHAR(100) NOT NULL , `city` VARCHAR(30) NOT NULL , `pin` INT(10) NOT NULL , `state` VARCHAR(30) NOT NULL , `country` VARCHAR(50) NOT NULL , `regn_no` INT(15) NOT NULL , `branch` VARCHAR(20) NOT NULL , `course` VARCHAR(20) NOT NULL , `roll_no` VARCHAR(20) NOT NULL , `email` VARCHAR(50) NOT NULL , `pwd` VARCHAR(250) NOT NULL ) ENGINE = InnoDB;
+
+
+ALTER TABLE `student_details` ADD `status` INT(5) NOT NULL AFTER `id`;
+
+
+
+CREATE TABLE admin_login(id INT NOT NULL AUTO_INCREMENT,email VARCHAR(100) NOT NULL,pwd VARCHAR(40) NOT NULL,PRIMARY KEY ( id ) );
+
+
+INSERT INTO `admin_login`(`email`, `pwd`) VALUES ([value-1],[value-2]);
