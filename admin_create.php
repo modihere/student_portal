@@ -57,7 +57,7 @@
 				<span class="number">1</span>
 				<b> Personal Information :</b>
 			</legend>
-			<fieldset style="background-color: tan">
+			<fieldset style="background-color: #35B393">
 				<table align="center" cellpadding = "10">
 					<!--- First Name -->
 					<tr>
@@ -108,7 +108,7 @@
 					<tr>
 						<td></td>
 						<td>
-							Same as<input  type="radio" name="address" value="1">&nbsp;
+							Same<input  type="radio" name="address" value="1" onclick="getaddress()">&nbsp;
 							Different<input type="radio" name="address" value="0">&nbsp;
 						</td>
 					</tr>
@@ -117,7 +117,7 @@
 							PERMANENT ADDRESS: 
 						</td>
 						<td>
-							<textarea name="Address" rows="4" cols="30" placeholder="eg:" onclick="getaddress()"></textarea>
+							<textarea name="Address" rows="4" cols="30" placeholder="eg:" ></textarea>
 						</td>
 					</tr>
 					<!--- City -->
@@ -151,7 +151,7 @@
 			</fieldset>
 		<br>
 		<legend><span class="number">2</span><b> Academic Details </b></legend>
-		<fieldset style="background-color: tan ">
+		<fieldset style="background-color: #35B393 ">
 			<br>
 			<table>
 				<!--- Qualification-->
@@ -177,23 +177,23 @@
 				<tr>
 					<!--<td align="center">2</td> !-->
 					<td align="center">Class XII</td>
-					<td align="center"><input type="text" name="ClassX_Board" maxlength="30" /></td>
-					<td align="center"><input type="text" name="ClassX_Percentage" maxlength="30" /></td>
-					<td align="center"><input type="text" name="ClassX_YrOfPassing" maxlength="30" /></td>
+					<td align="center"><input type="text" name="ClassXII_Board" maxlength="30" /></td>
+					<td align="center"><input type="text" name="ClassXII_Percentage" maxlength="30" /></td>
+					<td align="center"><input type="text" name="ClassXII_YrOfPassing" maxlength="30" /></td>
 				</tr>
 				<tr>
 					<!--<td align="center">3</td> !-->
 					<td align="center">Under Graduation</td>
-					<td align="center"><input type="text" name="ClassX_Board" maxlength="30" /></td>
-					<td align="center"><input type="text" name="ClassX_Percentage" maxlength="30" /></td>
-					<td align="center"><input type="text" name="ClassX_YrOfPassing" maxlength="30" /></td>
+					<td align="center"><input type="text" name="ug_board" maxlength="30" /></td>
+					<td align="center"><input type="text" name="ug_percentage" maxlength="30" /></td>
+					<td align="center"><input type="text" name="ug_yrofpassing" maxlength="30" /></td>
 				</tr>
 				<tr>
 					<!--<td align="center">4</td> !-->
 					<td align="center">Post Graduation</td>
-					<td align="center"><input type="text" name="ClassX_Board" maxlength="30" /></td>
-					<td align="center"><input type="text" name="ClassX_Percentage" maxlength="30" /></td>
-					<td align="center"><input type="text" name="ClassX_YrOfPassing" maxlength="30" /></td>
+					<td align="center"><input type="text" name="pg_board" maxlength="30" /></td>
+					<td align="center"><input type="text" name="pg_percentage" maxlength="30" /></td>
+					<td align="center"><input type="text" name="pg_yrofpassing" maxlength="30" /></td>
 				</tr>
 			</table>
 			<table>
@@ -235,47 +235,47 @@
 				</fieldset>
 				<br>
 				<legend><span class="number">3</span><b> Hobbies </b></legend>
-				<fieldset style="background-color: tan">
+				<fieldset style="background-color: #35B393">
 				<table>
 					<tr>
 						<td>HOBBIES:</td>
 						<td>
-							Sports <input type="radio" name="hobby" value="sports" />
-							Reading <input type="radio" name="hobby" value="reading" />
-							Singing <input type="radio" name="hobby" value="singing" />
-						    Dancing <input type="radio" name="hobby" value="dancing" />
-						    Painting <input type="radio" name="hobby" value="painting" />
-						    Others <input class="xshow" type="radio" name="hobby" />
+							Sports <input type="checkbox" name="hobby" value="sports" />
+							Reading <input type="checkbox" name="hobby" value="reading" />
+							Singing <input type="checkbox" name="hobby" value="singing" />
+						    Dancing <input type="checkbox" name="hobby" value="dancing" />
+						    Painting <input type="checkbox" name="hobby" value="painting" />
+						    Others <input class="xshow" type="checkbox" name="hobby" />
 						</td>
 					</tr>
 					<tr class="show">
-						<td>SPECIFY</td>
+						<td>SPECIFY:</td>
 						<td>
-							<textarea  name="addr"  rows="4" cols="30" placeholder="eg:" required="required"></textarea>
+							<textarea  name="addr"  rows="4" cols="25" placeholder="Write you some other hobbies here:"></textarea>
 						</td>
 					</tr>
 				</table>
 				</fieldset>
 				<br>
 				<legend><span class="number">4</span><b> Login Details </b></legend>
-				<fieldset style="background-color: tan">
+				<fieldset style="background-color: #35B393">
 				<table>
 				
 				<!--- Email Id -->
 				<tr>
 					<td colspan="2">EMAIL ID</td>
-					<td colspan="2"><input placeholder="example@gmail.com"  type="text" name="Email_Id" maxlength="50" onfocusin="email_in()" onfocusout="email_out()"/></td>
+					<td colspan="2"><input placeholder="example@gmail.com"  type="text" name="Email_Id" maxlength="50" onfocusin="email_in()" onfocusout="email_out()" required="required"></td>
 				</tr>
 				<br>
 				<!--- Submit and Reset -->
 				<tr>
 					<td colspan="2">PASSWORD</td>
-					<td colspan="2"><input type="password"  id="pwd" name="password" maxlength="25" placeholder="********"/></td>
+					<td colspan="2"><input type="password"  id="pwd" name="password" maxlength="25" placeholder="********"   required="required"></td>
 				</tr>
 				<br>
 				<tr>
 					<td colspan="2">CONFIRM PASSWORD</td>
-					<td colspan="2"><input type="password"  id="cpwd" name="cpassword" maxlength="25" placeholder="********" /></td>
+					<td colspan="2"><input type="password"  id="cpwd" name="cpassword" maxlength="25" placeholder="********"  required="required"></td>
 				</tr>
 				<br>	
 			</table>
@@ -289,7 +289,7 @@
 	<script type="text/javascript">
 		$(document).ready(function(){
     		$(".show").hide();
-    		$('input[type=radio]').change(function(){
+    		$('input[type=checkbox]').change(function(){
 	        	var isShow = $(this).hasClass('xshow');
 	        	if (isShow) {
 	        		$(".show").show();	

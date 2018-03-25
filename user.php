@@ -1,13 +1,35 @@
 <?php 
 	require_once("includes/functions.php");
 	require_once("includes/sessions.php");
+	require_once("includes/connection.php")
 ?>
 
 <?php
 	// print_r($_SESSION);
 	if(!confirm_logged_in()) redirect_to("user_login.php");
 ?>
-
+<?php
+	// echo $_SESSION['Email'];
+	// $index = $_SESSION['user_id'];
+	// $query = "SELECT * FROM student_details ";
+	// $query .= "WHERE email = '$_SESSION['Email']' ";
+	// echo "string";
+	$k=$_SESSION['Email'];
+	$query = "SELECT * FROM student_details WHERE email='$k'";
+	$result = mysqli_query($conn,$query);
+	//echo $result;
+	//echo "string1";
+			$row2 = mysqli_fetch_assoc($result);
+			//echo $row2;
+			$firstname = $row2['f_name'];
+			//echo $firstname;
+			$lastname = $row2['l_name'];
+			$address = $row2['p_addr'];
+			$email = $row2['email'];
+			$mobile = $row2['m_no'];
+			$nationality = $row2['country'];
+			 // print_r($result_set);
+?>
 
 <html>
 <head>
@@ -50,7 +72,7 @@
 			</li>
 			<li><a href="user_logout.php">Logout</a></li> 
 			</ul>
-		<p style="color: #CCCCCC; margin-top: 0; font-size: 30px;"  align="center"> Welcome,<?php echo($_SESSION['Email']) ?> </p>
+		<p style="color: black; margin-top: 0; font-size: 30px;"  align="center"> Welcome <?php echo($firstname.' '.$lastname) ?> </p>
 	</div>
 </body>
 </html>

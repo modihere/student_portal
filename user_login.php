@@ -92,6 +92,22 @@
    </div> 
    <h2> <?php echo $message ?> </h2> 
   </body>   -->
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Noto+Serif" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet"> 
+  <link href="https://fonts.googleapis.com/css?family=Lobster+Two" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/home1.css">
+
+</head>
+<body background="images/background.jpg">
+
+
+  <div id="header" style="text-align: center;">
+    <img src="images/nit_logo.png" alt="nit_logo" style="float: left; width:100px;height:100px;opacity: 0.7">
+      <h1 style="color: white">NIT DURGAPUR</h1>
+      <h2>(An Institute of National Importance under Government of India, Ministry of Human Resource Development)</h2>
+
+    </div>
 <div class="container">
         <ul class="navbar">
           <li><a href="home.php">Home</a></li>
@@ -115,7 +131,7 @@
           </li>
            
         </ul>
-      </div>
+      
   <body background="images/back.jfif">
     <form name="Student_login" onsubmit="return validate(this)" action="user_login.php" method="post">
       <h1 style="text-align:center;">STUDENT LOGIN PAGE</h1>
@@ -137,6 +153,7 @@
       </div>
       <br>
     </form>
+    </div>
     <!-- <script src="${resource(dir:'js', file:'valid.js') }"></script> -->
   </body>
 </html>   		

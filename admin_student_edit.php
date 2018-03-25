@@ -9,13 +9,13 @@
 ?>
 
 <?php
-	$query = "Select * from student_details";
+	$query = "Select * from student_details where status=1";
 	$result = mysqli_query($conn,$query);
 
 	while($row = mysqli_fetch_assoc($result))
 	{
 		if (!$_POST) {
-			$message="No one are selected to edit";
+			$message="No one is selected to edit";
 			redirect_to("admin_student_edit_error.php");
 		}
 		// print_r($_POST);

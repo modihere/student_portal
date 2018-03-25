@@ -10,7 +10,7 @@
 ?>
 
 <?php
-	$query = "Select id,f_name,l_name,email,m_no,regn_no from student_details";
+	$query = "Select id,f_name,l_name,email,m_no,regn_no from student_details where status=1";
 	$result = mysqli_query($conn,$query);
 ?>	
 
