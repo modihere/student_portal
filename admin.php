@@ -13,7 +13,7 @@
 
 <?php
 	global $message1;
-	$message="Hello";
+	$message="";
 	$message1="";
 
 	 // print_r($_SESSION);

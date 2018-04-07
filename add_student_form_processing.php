@@ -42,6 +42,7 @@
 			   } else {  
 			 $query = "
 		  		INSERT INTO student_details(f_name,l_name,date,age,m_no,p_addr,pm_addr,city,pin,state,country,regn_no,branch,course,roll_no,email,pwd,status) VALUES ('$f_name','$l_name','$dat','$age','$m_no','$p_adrr','$pm_adrr','$city','$pin','$state','$country','$regn_no','$branch','$course','$r_no','$email','$pwd',1)";
+		  		//echo $query;
 
 			$result = mysqli_query($conn,$query);
 
@@ -100,7 +101,7 @@
 				</li>
 				<li><a href="admin_logout.php">Logout</a></li> 
 			</ul>
-			<h4 align="center" style="color: #CCCCCC; margin-top: 0;"> <?php echo $message; ?> </h4>
+			<h4 align="center" style="color: black; margin-top: 0;"> <?php echo $message; ?> </h4>
 		</div>
 			
 </body>

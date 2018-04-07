@@ -37,7 +37,7 @@
 
 		<h2 style="text-align:center; color: #4bc970;background: black">ENTER YOUR DETAILS </h2>
 
-		<form name="Student_signup" onsubmit ="return validateForm()" action="user_form_processing.php" method="post">
+		<form style="width: 100%" name="Student_signup" onsubmit ="return validateForm()" action="user_form_processing.php" method="post">
 			<legend>
 				<span class="number">1</span>
 				<b> Personal Information :</b>
@@ -225,19 +225,19 @@
 					<tr>
 						<td>HOBBIES:</td>
 						<td>
-							Sports <input type="checkbox" name="hobby" value="sports" />
-							Reading <input type="checkbox" name="hobby" value="reading" />
-							Singing <input type="checkbox" name="hobby" value="singing" />
-						    Dancing <input type="checkbox" name="hobby" value="dancing" />
-						    Painting <input type="checkbox" name="hobby" value="painting" />
-						    Others <input class="xshow" type="checkbox" name="hobby" />
+							Sports <input type="checkbox" name="hobby[]" value="sports" />
+							Reading <input type="checkbox" name="hobby[]" value="reading" />
+							Singing <input type="checkbox" name="hobby[]" value="singing" />
+						    Dancing <input type="checkbox" name="hobby[]" value="dancing" />
+						    Painting <input type="checkbox" name="hobby[]" value="painting" />
+						    Others <input class="xshow" type="checkbox" name="hobby[]" value="other" />
 						</td>
 					</tr>
-					<tr class="show">
+					
 						<td>SPECIFY:</td>
 						<td>
-							<textarea  name="addr"  rows="4" cols="25" placeholder="Write you some other hobbies here:"></textarea>
-						</td>
+							<textarea  name="other"  rows="4" cols="25" placeholder="Write you some other hobbies here:"></textarea>
+
 					</tr>
 				</table>
 				</fieldset>
@@ -261,10 +261,15 @@
 				<tr>
 					<td colspan="2">CONFIRM PASSWORD</td>
 					<td colspan="2"><input type="password"  id="cpwd" name="cpassword" maxlength="25" placeholder="********"  required="required"></td>
+
 				</tr>
+
 				<br>	
+
 			</table>
+
 			<div class="buttons">
+				<input style="float: center;" type="file" name="image" accept="image/*">
 				<button type="submit" name="submit">Submit</button>
 				<button type="reset">Reset</button>
 			</div>

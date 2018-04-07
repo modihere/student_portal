@@ -86,23 +86,6 @@ function branch_out(){
 	return false;
 }
 
-/*
-function age_in(){
-	var x = document.forms["admin_signup_form"]["dob"].value;
-	if(x=="")
-	{
-		alert("please enter date of birth");
-		document.forms["admin_signup_form"]["age"].style.border ="2px solid red";
-		return false;
-	}
-	else
-	{
-		document.forms["admin_signup_form"]["age"].style.border ="none";
-	}
-	return false;
-}
-*/
-
 function id_in(){
 	var x = document.forms["Student_signup"]["branch"].value;
 	if(x=="")

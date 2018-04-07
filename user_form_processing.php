@@ -28,26 +28,57 @@
 			$branch=$_POST["branch"];
 			$course=$_POST["course"];
 			$r_no=$_POST["roll_no"];
+			$hobby=implode(',', $_POST['hobby']);
+			$other_hobby=$_POST["other"];
+			$hob=$_POST['hobby'];
+
+
 			// $ten_board=$_POST["ClassX_Board"];
 			
 
 			// echo $r_no;
 
-			$sql="SELECT * FROM student_details WHERE regn_no='$regn_no'";
+			$sql="SELECT * FROM student_details WHERE regn_no='$regn_no' or email='$email'";
 			$check=mysqli_query($conn,$sql);
  		    $checkrows=mysqli_num_rows($check);
  		    //echo $checkrows;
 
  		    if($checkrows>0) {
-			      $message = "<b><b>User with same registration number already exists.Try again with a different registration number.</b></b>";
+			      $message = "<b><b>User with same registration number or email already exists.Try again with a different registration number.</b></b>";
 			   } 
 			   else {  
-			 $query = "INSERT INTO student_details(f_name,l_name,date,age,m_no,p_addr,pm_addr,city,pin,state,country,regn_no,branch,course,roll_no,email,pwd,status) VALUES ('$f_name','$l_name','$dat','$age','$m_no','$p_adrr','$pm_adrr','$city','$pin','$state','$country','$regn_no','$branch','$course','$r_no','$email','$pwd',0)";
+
+			   	for($i=0;$i<count($hob);$i++)
+			   	{
+			   		
+			 		if(strcmp($hob[$i], "other")==0)
+			 		{
+			 			#echo $hob[$i];
+			 			$var=1;
+			 		}
+
+			   	}
+
+			   	if($var==1)
+			   	{
+			   		$other_hobby=$_POST["other"];
+			 			$query = "INSERT INTO student_details(f_name,l_name,date,age,m_no,p_addr,pm_addr,city,pin,state,country,regn_no,branch,course,roll_no,email,pwd,status,hobby,other_hobby) VALUES ('$f_name','$l_name','$dat','$age','$m_no','$p_adrr','$pm_adrr','$city','$pin','$state','$country','$regn_no','$branch','$course','$r_no','$email','$pwd',0,'" . $hobby . "','$other_hobby')";
+			 #echo $query;
 			 //echo $query;
+			 			$result = mysqli_query($conn,$query);
+			   	}
+			   	else
+			   	{
+			   		$other_hobby=$_POST["other"];
+			 			$query = "INSERT INTO student_details(f_name,l_name,date,age,m_no,p_addr,pm_addr,city,pin,state,country,regn_no,branch,course,roll_no,email,pwd,status,hobby,other_hobby) VALUES ('$f_name','$l_name','$dat','$age','$m_no','$p_adrr','$pm_adrr','$city','$pin','$state','$country','$regn_no','$branch','$course','$r_no','$email','$pwd',0,'" . $hobby . "','NULL')";
+			 #echo $query;
+			 //echo $query;
+			 			$result = mysqli_query($conn,$query);
+			   	}
 
-			$result = mysqli_query($conn,$query);
 
-			//echo $result;
+
+			 
 
 			if(!$result){
 				$message = "Registration failed";

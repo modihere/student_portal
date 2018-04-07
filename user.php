@@ -19,15 +19,15 @@
 	$result = mysqli_query($conn,$query);
 	//echo $result;
 	//echo "string1";
-			$row2 = mysqli_fetch_assoc($result);
+			$row = mysqli_fetch_assoc($result);
 			//echo $row2;
-			$firstname = $row2['f_name'];
+			$firstname = $row['f_name'];
 			//echo $firstname;
-			$lastname = $row2['l_name'];
-			$address = $row2['p_addr'];
-			$email = $row2['email'];
-			$mobile = $row2['m_no'];
-			$nationality = $row2['country'];
+			$lastname = $row['l_name'];
+			$address = $row['p_addr'];
+			$email = $row['email'];
+			$mobile = $row['m_no'];
+			$nationality = $row['country'];
 			 // print_r($result_set);
 ?>
 
@@ -42,7 +42,7 @@
 	<link rel="stylesheet" type="text/css" href="css/home.css">
 	<script type="text/javascript" src="js/valid2.js"></script>
 </head>
-<body background="images/background.jpg">
+<body>
 	<div id="header" style="text-align: center;">
 		<img src="images/nit_logo.png" alt="nit_logo" style="float: left; width:100px;height:100px">
 			<h1>NIT DURGAPUR</h1>
@@ -72,7 +72,109 @@
 			</li>
 			<li><a href="user_logout.php">Logout</a></li> 
 			</ul>
+
 		<p style="color: black; margin-top: 0; font-size: 30px;"  align="center"> Welcome <?php echo($firstname.' '.$lastname) ?> </p>
+		<table style="color: black" align="center" border="1px" bordercolor="black" >
+
+			<tr>
+			<td style="text-align: center;">CURRICULUM VIATE</td><td><img src="images/1.jpg" height="250" width="210" align="center"/></td>
+		</tr>
+	
+					<tr>
+						<td> <i> Name: </i></td><td><?php 	echo $row['f_name'].' '.$row['l_name']; ?> </td>
+					</tr>
+					<tr>
+						<td> <i> Email: </i></td><td><?php 	echo $row['email']; ?> </td>
+					</tr>
+					
+					<tr>	
+						<td> <i> Registration No.: </i> </td><td><?php 	echo $row['regn_no']; ?> </td>
+					</tr>
+					<tr>	
+						<td> <i> Mobile No.: </i></td><td><?php 	echo $row['m_no']; ?></td>
+					</tr>
+					<tr>	
+						<td> <i> Date of Birth: </i></td><td><?php 	echo $row['date']; ?></td>
+					</tr>
+					<tr>	
+						<td> <i> Age: </i></td><td><?php 	echo $row['age']; ?></td>
+					</tr>
+					<tr>	
+						<td> <i> Permanent Address: </i></td><td><?php 	echo $row['p_addr']; ?></td>
+					</tr>
+					<tr>	
+						<td> <i> City: </i></td><td><?php 	echo $row['city']; ?></td>
+					</tr>
+					<tr>	
+						<td> <i> Pin Code: </i></td><td><?php 	echo $row['pin']; ?></td>
+					</tr>
+					<tr>	
+						<td> <i> Country: </i></td><td><?php 	echo $row['country']; ?></td>
+					</tr>
+					<tr>	
+						<td> <i> Registration Number: </i></td><td><?php 	echo $row['regn_no']; ?></td>
+					</tr>
+					<tr>	
+						<td> <i> Branch: </i></td><td><?php 	echo $row['branch']; ?></td>
+					</tr>
+					<tr>	
+						<td> <i> Course: </i></td><td><?php 	echo $row['course']; ?></td>
+					</tr>
+					<tr>	
+						<td> <i> Roll Number: </i></td><td><?php 	echo $row['roll_no']; ?></td>
+					</tr>
+					<tr>	
+						<td> <i> Hobbies: </i></td><td><?php 	echo $row['hobby']; ?></td>
+					</tr>
+					<tr>
+						<th>CLASS X</th>
+					</tr>
+					<tr>
+						<td>Board</td><td>CISCE</td>
+					</tr>
+					<tr>
+						<td>Percentage</td><td>91.4%
+						</td>
+					</tr>
+					<tr>
+						<td>Year of Passing</td><td>2013</td>
+					</tr>
+					<tr>
+						<th>CLASS XII</th>
+					</tr>
+					<tr>
+						<td>Board</td><td></td>
+					</tr>
+					<tr>
+						<td>Percentage</td><td>
+						</td>
+					</tr>
+					<tr>
+						<td>Year of Passing</td><td></td>
+					</tr>
+					<tr>
+						<th>UNDERGRADUATION</th>
+					</tr>
+					<tr>
+						<td>Board</td><td></td>
+					</tr>
+					<tr>
+						<td>Percentage</td><td>
+						</td>
+					</tr>
+					<tr>
+						<td>Year of Passing</td><td></td>
+					</tr>
+					<tr> <td>The information here are true to the best of my knowledge.</td><td style="text-align: right;">sig.</td></tr>
+			
+			</table>
+			<button onclick="myFunction()">Print this page</button>
+
+<script>
+function myFunction() {
+    window.print();
+}
+</script>
 	</div>
 </body>
 </html>
