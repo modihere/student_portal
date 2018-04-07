@@ -8,7 +8,8 @@
 <?php	
 	
 	$target_dir = "photos/";
-	$target_file = $target_dir . basename($_FILES["image"]["name"]);
+	$target_file = $target_dir.basename($_FILES['image']['name']);
+	echo $target_file;
 	$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
 		if(isset($_POST['submit']))
@@ -38,22 +39,21 @@
 			$hob=$_POST['hobby'];
 			$img=$_FILES['image']['name'];
 
-			$check = getimagesize($_FILES["image"]["tmp_name"]);
+			$check = getimagesize($_FILES['image']['tmp_name']);
 		    if($check !== false) {
-		        echo "File is an image - " . $check["mime"] . ".";
+		        #echo "File is an image - " . $check["mime"] . ".";
 		        $uploadOk = 1;
 		    } else {
-		        echo "File is not an image.";
+		        #echo "File is not an image.";
 		        $uploadOk = 0;
 		    }
 
-			if ($_FILES["image"]["size"] > 500000) {
-    			echo "Sorry, your file is too large.";
+			if ($_FILES['image']['size'] > 500000) {
+    			$message = "<b><b>Sorry your file is too large</b></b>";
     			$uploadOk = 0;
 				}
 
-			echo $img;
-			echo $state;
+			#echo $img;
 
 
 
@@ -88,22 +88,21 @@
 			   	if($var==1)
 			   	{
 			   		$other_hobby=$_POST["other"];
-			 			$query = "INSERT INTO student_details(f_name,l_name,date,age,m_no,p_addr,pm_addr,city,pin,state,country,regn_no,branch,course,roll_no,email,pwd,status,hobby,other_hobby) VALUES ('$f_name','$l_name','$dat','$age','$m_no','$p_adrr','$pm_adrr','$city','$pin','$state','$country','$regn_no','$branch','$course','$r_no','$email','$pwd',0,'" . $hobby . "','$other_hobby')";
+			 			$query = "INSERT INTO student_details(f_name,l_name,date,age,m_no,p_addr,pm_addr,city,pin,state,country,regn_no,branch,course,roll_no,email,pwd,status,hobby,other_hobby,image) VALUES ('$f_name','$l_name','$dat','$age','$m_no','$p_adrr','$pm_adrr','$city','$pin','$state','$country','$regn_no','$branch','$course','$r_no','$email','$pwd',0,'" . $hobby . "','$other_hobby','$img')";
 			 #echo $query;
 			 //echo $query;
 			 			$result = mysqli_query($conn,$query);
 			   	}
 			   	else
 			   	{
-			   		$other_hobby=$_POST["other"];
-			 			$query = "INSERT INTO student_details(f_name,l_name,date,age,m_no,p_addr,pm_addr,city,pin,state,country,regn_no,branch,course,roll_no,email,pwd,status,hobby,other_hobby) VALUES ('$f_name','$l_name','$dat','$age','$m_no','$p_adrr','$pm_adrr','$city','$pin','$state','$country','$regn_no','$branch','$course','$r_no','$email','$pwd',0,'" . $hobby . "','NULL')";
+			 			$query = "INSERT INTO student_details(f_name,l_name,date,age,m_no,p_addr,pm_addr,city,pin,state,country,regn_no,branch,course,roll_no,email,pwd,status,hobby,other_hobby,image) VALUES ('$f_name','$l_name','$dat','$age','$m_no','$p_adrr','$pm_adrr','$city','$pin','$state','$country','$regn_no','$branch','$course','$r_no','$email','$pwd',0,'" . $hobby . "','NULL','$img')";
 			 #echo $query;
 			 //echo $query;
 			 			$result = mysqli_query($conn,$query);
 			   	}
 
 
-
+			   	
 			 
 
 			if(!$result){
@@ -111,7 +110,14 @@
 				die("<b><b>Registration Failed.</b></b>");
 			}
 			else{
-				$message = "<b><b>Registration Successful</b></b>";
+				if(move_uploaded_file($_FILES['image']['tmp_name'], $target_file))
+				{
+					$message = "<b><b>Registration Successful and image uploaded</b></b>";
+				}
+				else
+				{
+					$message = "Registration recorded but image couldn't be uploaded";
+				}
 			}
 		}
 		
