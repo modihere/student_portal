@@ -37,7 +37,7 @@
 
 		<h2 style="text-align:center; color: #4bc970;background: black">ENTER YOUR DETAILS </h2>
 
-		<form style="width: 100%" name="Student_signup" onsubmit ="return validateForm()" action="user_form_processing.php" method="post">
+		<form style="width: 100%" name="Student_signup" onsubmit ="return validateForm()" action="user_form_processing.php" method="post" enctype="multipart/form-data">
 			<legend>
 				<span class="number">1</span>
 				<b> Personal Information :</b>
@@ -269,7 +269,7 @@
 			</table>
 
 			<div class="buttons">
-				<input style="float: center;" type="file" name="image" accept="image/*">
+				<input  type="file" name="image" id="image" accept="image/*">
 				<button type="submit" name="submit">Submit</button>
 				<button type="reset">Reset</button>
 			</div>

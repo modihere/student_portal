@@ -28,6 +28,9 @@
 			$email = $row['email'];
 			$mobile = $row['m_no'];
 			$nationality = $row['country'];
+			$image=$row['image'];
+			#echo $image;
+
 			 // print_r($result_set);
 ?>
 
@@ -77,7 +80,7 @@
 		<table style="color: black" align="center" border="1px" bordercolor="black" >
 
 			<tr>
-			<td style="text-align: center;">CURRICULUM VIATE</td><td><img src="images/1.jpg" height="250" width="210" align="center"/></td>
+			<td style="text-align: center;">CURRICULUM VIATE</td><td><?php echo "<img src='photos/".$row['image']."'  width='210' height='250' align='center' />"; ?> </td>
 		</tr>
 	
 					<tr>

@@ -6,6 +6,11 @@
 
 
 <?php	
+	
+	$target_dir = "photos/";
+	$target_file = $target_dir . basename($_FILES["image"]["name"]);
+	$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+
 		if(isset($_POST['submit']))
 		{
 			// Perform query
@@ -31,6 +36,27 @@
 			$hobby=implode(',', $_POST['hobby']);
 			$other_hobby=$_POST["other"];
 			$hob=$_POST['hobby'];
+			$img=$_FILES['image']['name'];
+
+			$check = getimagesize($_FILES["image"]["tmp_name"]);
+		    if($check !== false) {
+		        echo "File is an image - " . $check["mime"] . ".";
+		        $uploadOk = 1;
+		    } else {
+		        echo "File is not an image.";
+		        $uploadOk = 0;
+		    }
+
+			if ($_FILES["image"]["size"] > 500000) {
+    			echo "Sorry, your file is too large.";
+    			$uploadOk = 0;
+				}
+
+			echo $img;
+			echo $state;
+
+
+
 
 
 			// $ten_board=$_POST["ClassX_Board"];
