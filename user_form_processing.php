@@ -9,7 +9,7 @@
 	
 	$target_dir = "photos/";
 	$target_file = $target_dir.basename($_FILES['image']['name']);
-	echo $target_file;
+	#echo $target_file;
 	$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
 		if(isset($_POST['submit']))
@@ -74,32 +74,12 @@
 			   } 
 			   else {  
 
-			   	for($i=0;$i<count($hob);$i++)
-			   	{
-			   		
-			 		if(strcmp($hob[$i], "other")==0)
-			 		{
-			 			#echo $hob[$i];
-			 			$var=1;
-			 		}
-
-			   	}
-
-			   	if($var==1)
-			   	{
+			   	
 			   		$other_hobby=$_POST["other"];
 			 			$query = "INSERT INTO student_details(f_name,l_name,date,age,m_no,p_addr,pm_addr,city,pin,state,country,regn_no,branch,course,roll_no,email,pwd,status,hobby,other_hobby,image) VALUES ('$f_name','$l_name','$dat','$age','$m_no','$p_adrr','$pm_adrr','$city','$pin','$state','$country','$regn_no','$branch','$course','$r_no','$email','$pwd',0,'" . $hobby . "','$other_hobby','$img')";
 			 #echo $query;
 			 //echo $query;
 			 			$result = mysqli_query($conn,$query);
-			   	}
-			   	else
-			   	{
-			 			$query = "INSERT INTO student_details(f_name,l_name,date,age,m_no,p_addr,pm_addr,city,pin,state,country,regn_no,branch,course,roll_no,email,pwd,status,hobby,other_hobby,image) VALUES ('$f_name','$l_name','$dat','$age','$m_no','$p_adrr','$pm_adrr','$city','$pin','$state','$country','$regn_no','$branch','$course','$r_no','$email','$pwd',0,'" . $hobby . "','NULL','$img')";
-			 #echo $query;
-			 //echo $query;
-			 			$result = mysqli_query($conn,$query);
-			   	}
 
 
 			   	

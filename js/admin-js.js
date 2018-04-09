@@ -2,7 +2,7 @@ function email_in(){
 	var x = document.forms["admin_login"]["Email_Id"].value;
 	if(x == "")
 	{
-		document.forms["admin_login"]["Email_Id"].style.backgroundColor ="#008B8B";
+		document.forms["admin_login"]["Email_Id"].style.backgroundColor ="white";
 		document.forms["admin_login"]["Email_Id"].placeholder = "*****@gmail.com";
 		document.forms["admin_login"]["Email_Id"].style.border ="none";
 	}

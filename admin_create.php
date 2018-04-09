@@ -57,7 +57,7 @@
 				<span class="number">1</span>
 				<b> Personal Information :</b>
 			</legend>
-			<fieldset style="background-color: #35B393">
+			<fieldset style="background-color: green">
 				<table align="center" cellpadding = "10">
 					<!--- First Name -->
 					<tr>

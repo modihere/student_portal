@@ -119,9 +119,9 @@
 				<li><a href="admin_logout.php">Logout</a></li> 
 			</ul>
 			<form action="admin.php" method="POST">
-				<h4 align="center" style="color: #CCCCCC; margin-top: 0;"> <?php echo $message; ?> </h4>
-				<h5 align="center" style="color: #CCCCCC; margin-top: 0;"> <?php echo $message1; ?> </h5>
-				<table style="color: black" align="center" border="1px" bordercolor="white" >
+				<h4 align="center" style="color: black; margin-top: 0;"> <?php echo $message; ?> </h4>
+				<h5 align="center" style="color: black; margin-top: 0;"> <?php echo $message1; ?> </h5>
+				<table style="color: black" align="center" border="1px" bordercolor="black" >
 					<tr>
 						<th> <i> Name </i> </th>
 						<th> <i> Email </i> </th>
@@ -135,7 +135,7 @@
 						<tr>
 							<td> <?php 	echo $row['f_name'].' '.$row['l_name']; ?> </td>
 							<td> <?php 	echo $row['email']; ?> </td>
-							<td> <?php 	echo $row['regn_no']; ?> </td>
+							<td> <a href="show.php?regno=<?php echo $row['regn_no']; ?>"><?php echo $row['regn_no']; ?> </a></td>
 							<td> <?php 	echo $row['m_no']; ?> </td>
 							<td> <input type="checkbox" name="<?php echo $row['id'] ?>"> </td>
 						</tr>	

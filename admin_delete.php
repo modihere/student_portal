@@ -86,7 +86,7 @@
 			<h2 align="center" style="color: blue"> Registered Students</h2>
 			<h4 align="center" style="color: black"> <?php echo $message; ?> </h4>
 			<form action="admin_delete.php" method="POST">
-				<table style="color: #black" align="center" border="1px" bordercolor="white">
+				<table style="color: #black" align="center" border="1px" bordercolor="black">
 					<tr>
 						<th> <i> Name </i> </th>
 						<th> <i> Email </i> </th>
@@ -100,7 +100,7 @@
 						<tr>
 							<td> <?php 	echo $row['f_name'].' '.$row['l_name']; ?> </td>
 							<td> <?php 	echo $row['email']; ?> </td>
-							<td> <?php 	echo $row['regn_no']; ?> </td>
+							<td> <a href="show.php?regno=<?php echo $row['regn_no']; ?>" title="Click here to find more about <?php 	echo $row['f_name'].' '.$row['l_name']; ?> "><?php echo $row['regn_no']; ?> </a> </td>
 							<td> <?php 	echo $row['m_no']; ?> </td>
 							<td> <input type="checkbox" name="<?php echo $row['id'] ?>"> </td>
 						</tr>	

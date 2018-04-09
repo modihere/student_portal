@@ -57,7 +57,7 @@
 				<li><a href="admin_logout.php">Logout</a></li> 
 			</ul>
 			<form action="admin_student_edit.php" method="POST">
-				<table style="color: black" align="center" border="1px" bordercolor="white" >
+				<table style="color: black" align="center" border="1px" bordercolor="black" >
 					<tr>
 						<th> <i> Name </i> </th>
 						<th> <i> Email </i> </th>
@@ -71,7 +71,7 @@
 						<tr>
 							<td> <?php 	echo $row['f_name'].' '.$row['l_name']; ?> </td>
 							<td> <?php 	echo $row['email']; ?> </td>
-							<td> <?php 	echo $row['regn_no']; ?> </td>
+							<td> <a href="show.php?regno=<?php echo $row['regn_no']; ?>" title="Click here to find more about <?php 	echo $row['f_name'].' '.$row['l_name']; ?> "><?php echo $row['regn_no']; ?> </a></td>
 							<td> <?php 	echo $row['m_no']; ?> </td>
 						</tr>	
 

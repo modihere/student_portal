@@ -225,16 +225,15 @@
 					<tr>
 						<td>HOBBIES:</td>
 						<td>
-							Sports <input type="checkbox" name="hobby[]" value="sports" />
-							Reading <input type="checkbox" name="hobby[]" value="reading" />
-							Singing <input type="checkbox" name="hobby[]" value="singing" />
-						    Dancing <input type="checkbox" name="hobby[]" value="dancing" />
-						    Painting <input type="checkbox" name="hobby[]" value="painting" />
-						    Others <input class="xshow" type="checkbox" name="hobby[]" value="other" />
+							Sports <input type="checkbox" name="hobby[]" value="Sports" />
+							Reading <input type="checkbox" name="hobby[]" value="Reading" />
+							Singing <input type="checkbox" name="hobby[]" value="Singing" />
+						    Dancing <input type="checkbox" name="hobby[]" value="Dancing" />
+						    Painting <input type="checkbox" name="hobby[]" value="Painting" />
 						</td>
 					</tr>
 					
-						<td>SPECIFY:</td>
+						<td>SPECIFY OTHER:</td>
 						<td>
 							<textarea  name="other"  rows="4" cols="25" placeholder="Write you some other hobbies here:"></textarea>
 

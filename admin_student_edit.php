@@ -87,7 +87,7 @@
 			</ul>
 		<form action="admin_update_process.php" name="Student_signup" method="POST" >
 			
-				<fieldset style="background-color: tan">
+				<fieldset style="background-color: green">
 					<!-- <h1>Student Information</h1> -->
 					<table align="center" cellpadding="10">
 						<tr>
@@ -112,16 +112,8 @@
 							<td> <input type="text" name="Email_Id" placeholder="example@domain.com" onfocusin="email_in()" onfocusout="email_out()" value="<?php echo $email ?>"> </td>
 						</tr>
 						<br>
-						<tr>
-							<th> Password </th>
-							<td> <input type="password" id="pwd" name="password" value="" placeholder="*******"  required="required"> </td>
-						</tr>
-						<br>
-						<tr>
-							<th> Re-enter Password </th>
-							<td> <input type="password" id="cpwd" name="cpassword" placeholder="Enter password again" required="required"></td>
-						</tr>
-						<br>
+						
+						
 						<tr>
 							<th> Mobile </th>
 							<td> <input type="text" name="Mobile_Number" placeholder="Enter mobile number" onfocusin="Mobile_Number_in()" onfocusout="Mobile_Number_out()" required="required"  value="<?php echo $mobile ?>"></td>
