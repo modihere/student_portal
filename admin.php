@@ -76,7 +76,6 @@
 	$result = mysqli_query($conn,$query);
 ?>
 
-	 
 <html>
 <head>
 	<title>
@@ -87,7 +86,10 @@
 	<link href="https://fonts.googleapis.com/css?family=Lobster+Two" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="css/home.css">
 </head>
-<body background="images/background.jpg">
+
+
+
+<body oncontextmenu="return false;">
 	<div id="header" style="text-align: center;">
 		<img src="images/nit_logo.png" alt="nit_logo" style="float: left; width:100px;height:100px">
 			<h1>NIT DURGAPUR</h1>

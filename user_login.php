@@ -92,6 +92,13 @@
    </div> 
    <h2> <?php echo $message ?> </h2> 
   </body>   -->
+
+
+<script type="text/javascript">
+  window.history.forward();
+  function noBack() { window.history.forward(); }
+</script>
+
 <head>
   <link href="https://fonts.googleapis.com/css?family=Noto+Serif" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet"> 
@@ -99,7 +106,7 @@
   <link rel="stylesheet" type="text/css" href="css/home1.css">
 
 </head>
-<body background="images/background.jpg">
+<body onload="noBack();" onpageshow="if (event.persisted) noBack();" onunload="">
 
 
   <div id="header" style="text-align: center;">

@@ -11,6 +11,10 @@
     <!-- // <script type="text/javascript" src="/javascript/login.js"></script> -->
     <script type="text/javascript" src="js/admin-js.js"></script>
   <head>
+    <script type="text/javascript">
+  window.history.forward();
+  function noBack() { window.history.forward(); }
+</script>
 
 <?php
   // if (logged_in()) {
@@ -109,7 +113,7 @@
   <link rel="stylesheet" type="text/css" href="css/home1.css">
 
 </head>
-<body background="images/background.jpg">
+<body onload="noBack();" onpageshow="if (event.persisted) noBack();" onunload="">
 
 
   <div id="header" style="text-align: center;">

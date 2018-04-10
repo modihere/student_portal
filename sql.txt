@@ -19,6 +19,14 @@ ALTER TABLE `student_details` ADD `image` VARCHAR(255) AFTER `id`;
 ALTER TABLE `student_details` ADD `gender` VARCHAR(255) AFTER `id`;
 
 ALTER TABLE `student_details` ADD `xb` VARCHAR(255) AFTER `id`;
+ALTER TABLE `student_details` ADD `xp` VARCHAR(255) AFTER `id`;
+ALTER TABLE `student_details` ADD `xyp` VARCHAR(255) AFTER `id`;
+ALTER TABLE `student_details` ADD `xiib` VARCHAR(255) AFTER `id`;
+ALTER TABLE `student_details` ADD `xiip` VARCHAR(255) AFTER `id`;
+ALTER TABLE `student_details` ADD `xiiyp` VARCHAR(255) AFTER `id`;
+ALTER TABLE `student_details` ADD `ugb` VARCHAR(255) AFTER `id`;
+ALTER TABLE `student_details` ADD `ugbp` VARCHAR(255) AFTER `id`;
+ALTER TABLE `student_details` ADD `ugyp` VARCHAR(255) AFTER `id`;
 
 
 CREATE TABLE admin_login(id INT NOT NULL AUTO_INCREMENT,email VARCHAR(100) NOT NULL,pwd VARCHAR(40) NOT NULL,PRIMARY KEY ( id ) );
