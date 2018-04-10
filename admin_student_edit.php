@@ -32,9 +32,11 @@
 			$row2 = mysqli_fetch_assoc($result_set);
 			$firstname = $row2['f_name'];
 			$lastname = $row2['l_name'];
+			$date=$row2['date'];
 			$address = $row2['p_addr'];
 			$email = $row2['email'];
 			$mobile = $row2['m_no'];
+			$age=$row2['age'];
 			$nationality = $row2['country'];
 			 // print_r($result_set);
 			break;
@@ -122,7 +124,7 @@
 						<br>
 						<tr>
 							<th> Date Of Birth</th>
-							<td> <input type="date" name="dob"> </td>
+							<td> <input type="date" name="dob" value="<?php echo $date ?>"> </td>
 						</tr>
 						<br>
 						<tr>
@@ -135,7 +137,7 @@
 						<br>
 						<tr> 
 						 	<th> Age </th>
-						 	<td> <input type="text" name="age" placeholder="enter your age" required="required" onfocusin="getage()"></td>
+						 	<td> <input type="text" name="age" placeholder="enter your age" required="required" onfocusin="getage()" value="<?php echo $age ?>"></td>
 						</tr>
 						<tr>
 						 	<th> Country </th>

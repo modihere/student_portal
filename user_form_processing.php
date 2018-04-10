@@ -29,7 +29,8 @@
 			$pin=$_POST["Pin_Code"];
 			$state=$_POST["State"];
 			$country=$_POST["Country"];
-			$gender=$_POST["Gender"];
+			$gender=$_POST['gender'];
+			#echo $gender;
 			$regn_no=$_POST["regn_no"];
 			$branch=$_POST["branch"];
 			$course=$_POST["course"];
@@ -38,6 +39,15 @@
 			$other_hobby=$_POST["other"];
 			$hob=$_POST['hobby'];
 			$img=$_FILES['image']['name'];
+			$x1=$_POST['xb'];
+			$x2=$_POST['xp'];
+			$x3=$_POST['xyp'];
+			$x4=$_POST['xiib'];
+			$x5=$_POST['xiip'];
+			$x6=$_POST['xiiyp'];
+			$x7=$_POST['ugb'];
+			$x8=$_POST['ugp'];
+			$x9=$_POST['ugyp'];
 
 			$check = getimagesize($_FILES['image']['tmp_name']);
 		    if($check !== false) {
@@ -76,7 +86,7 @@
 
 			   	
 			   		$other_hobby=$_POST["other"];
-			 			$query = "INSERT INTO student_details(f_name,l_name,date,age,m_no,p_addr,pm_addr,city,pin,state,country,regn_no,branch,course,roll_no,email,pwd,status,hobby,other_hobby,image) VALUES ('$f_name','$l_name','$dat','$age','$m_no','$p_adrr','$pm_adrr','$city','$pin','$state','$country','$regn_no','$branch','$course','$r_no','$email','$pwd',0,'" . $hobby . "','$other_hobby','$img')";
+			 			$query = "INSERT INTO student_details(f_name,l_name,date,age,m_no,p_addr,pm_addr,city,pin,state,country,regn_no,branch,course,roll_no,email,pwd,status,hobby,other_hobby,image,gender,xb,xp,xyp,xiib,xiip,xiiyp,ugb,ugbp,ugyp) VALUES ('$f_name','$l_name','$dat','$age','$m_no','$p_adrr','$pm_adrr','$city','$pin','$state','$country','$regn_no','$branch','$course','$r_no','$email','$pwd',0,'" . $hobby . "','$other_hobby','$img','$gender','$x1','$x2','$x3','$x4','$x5','$x6','$x7','$x8','$x9')";
 			 #echo $query;
 			 //echo $query;
 			 			$result = mysqli_query($conn,$query);

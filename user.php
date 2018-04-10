@@ -91,93 +91,14 @@
 					</tr>
 					
 					<tr>	
-						<td> <i> Registration No.: </i> </td><td><?php 	echo $row['regn_no']; ?> </td>
+						<td> <i> Registration No.:(Click to download your CV) </i> </td><td><a href="cv.php?regno=<?php echo $row['regn_no']; ?>" title="Click here to find more about <?php 	echo $row['f_name'].' '.$row['l_name']; ?> "><?php echo $row['regn_no']; ?> </a></td>
 					</tr>
 					<tr>	
 						<td> <i> Mobile No.: </i></td><td><?php 	echo $row['m_no']; ?></td>
 					</tr>
-					<tr>	
-						<td> <i> Date of Birth: </i></td><td><?php 	echo $row['date']; ?></td>
-					</tr>
-					<tr>	
-						<td> <i> Age: </i></td><td><?php 	echo $row['age']; ?></td>
-					</tr>
-					<tr>	
-						<td> <i> Permanent Address: </i></td><td><?php 	echo $row['p_addr']; ?></td>
-					</tr>
-					<tr>	
-						<td> <i> City: </i></td><td><?php 	echo $row['city']; ?></td>
-					</tr>
-					<tr>	
-						<td> <i> Pin Code: </i></td><td><?php 	echo $row['pin']; ?></td>
-					</tr>
-					<tr>	
-						<td> <i> Country: </i></td><td><?php 	echo $row['country']; ?></td>
-					</tr>
-					<tr>	
-						<td> <i> Registration Number: </i></td><td><?php 	echo $row['regn_no']; ?></td>
-					</tr>
-					<tr>	
-						<td> <i> Branch: </i></td><td><?php 	echo $row['branch']; ?></td>
-					</tr>
-					<tr>	
-						<td> <i> Course: </i></td><td><?php 	echo $row['course']; ?></td>
-					</tr>
-					<tr>	
-						<td> <i> Roll Number: </i></td><td><?php 	echo $row['roll_no']; ?></td>
-					</tr>
-					<tr>	
-						<td> <i> Hobbies: </i></td><td><?php 	echo $row['hobby'].','.$row['other_hobby']; ?></td>
-					</tr>
-					<tr>
-						<th>CLASS X</th>
-					</tr>
-					<tr>
-						<td>Board</td><td>CISCE</td>
-					</tr>
-					<tr>
-						<td>Percentage</td><td>91.4%
-						</td>
-					</tr>
-					<tr>
-						<td>Year of Passing</td><td>2013</td>
-					</tr>
-					<tr>
-						<th>CLASS XII</th>
-					</tr>
-					<tr>
-						<td>Board</td><td></td>
-					</tr>
-					<tr>
-						<td>Percentage</td><td>
-						</td>
-					</tr>
-					<tr>
-						<td>Year of Passing</td><td></td>
-					</tr>
-					<tr>
-						<th>UNDERGRADUATION</th>
-					</tr>
-					<tr>
-						<td>Board</td><td></td>
-					</tr>
-					<tr>
-						<td>Percentage</td><td>
-						</td>
-					</tr>
-					<tr>
-						<td>Year of Passing</td><td></td>
-					</tr>
-					<tr> <td>The information here are true to the best of my knowledge.</td><td style="text-align: right;">sig.</td></tr>
+
 			
 			</table>
-			<button onclick="myFunction()">Print this page</button>
-
-<script>
-function myFunction() {
-    window.print();
-}
-</script>
 	</div>
 </body>
 </html>

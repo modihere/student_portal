@@ -31,16 +31,25 @@
 			$pin=$_POST["Pin_Code"];
 			$state=$_POST["State"];
 			$country=$_POST["Country"];
-			$gender=$_POST["Gender"];
+			$gender=$_POST['gender'];
+			#echo $gender;
 			$regn_no=$_POST["regn_no"];
-			#echo $regn_no;
 			$branch=$_POST["branch"];
 			$course=$_POST["course"];
 			$r_no=$_POST["roll_no"];
 			$hobby=implode(',', $_POST['hobby']);
-			$other_hobby=$_POST['other'];
+			$other_hobby=$_POST["other"];
 			$hob=$_POST['hobby'];
 			$img=$_FILES['image']['name'];
+			$x1=$_POST['xb'];
+			$x2=$_POST['xp'];
+			$x3=$_POST['xyp'];
+			$x4=$_POST['xiib'];
+			$x5=$_POST['xiip'];
+			$x6=$_POST['xiiyp'];
+			$x7=$_POST['ugb'];
+			$x8=$_POST['ugp'];
+			$x9=$_POST['ugyp'];
 
 			$check = getimagesize($_FILES['image']['tmp_name']);
 		    if($check !== false) {
@@ -70,14 +79,17 @@
 			$sql="SELECT * FROM student_details WHERE regn_no='$regn_no' or email='$email'";
 			#echo $sql;
 			$check=mysqli_query($conn,$sql);
+			$row = mysqli_fetch_assoc($check);
  		    $checkrows=mysqli_num_rows($check);
- 		    echo $checkrows;
  		    //echo $checkrows;
 
  		    if($checkrows==1) {
 
+ 		    	if($uploadOk==0)
+ 		    	{
+ 		    		$tempimg=$row['image'];
+ 		    	
  		    		$query1="DELETE FROM student_details WHERE regn_no='$regn_no' or email='$email'";
- 		    		echo $query1;
 
  		    		$result1=mysqli_query($conn,$query1);
  		    		if(!$result1){
@@ -86,10 +98,24 @@
 					}
 			   	
 			   		$other_hobby=$_POST['other'];
-			 			$query = "INSERT INTO student_details(f_name,l_name,date,age,m_no,p_addr,pm_addr,city,pin,state,country,regn_no,branch,course,roll_no,email,pwd,status,hobby,other_hobby,image) VALUES ('$f_name','$l_name','$dat','$age','$m_no','$p_adrr','$pm_adrr','$city','$pin','$state','$country','$regn_no','$branch','$course','$r_no','$email','$pwd',1,'" . $hobby . "','$other_hobby','$img')";
-			 #echo $query;
-			 //echo $query;
-			 			$result = mysqli_query($conn,$query);
+			 			$query = "INSERT INTO student_details(f_name,l_name,date,age,m_no,p_addr,pm_addr,city,pin,state,country,regn_no,branch,course,roll_no,email,pwd,status,hobby,other_hobby,image,gender,xb,xp,xyp,xiib,xiip,xiiyp,ugb,ugbp,ugyp) VALUES ('$f_name','$l_name','$dat','$age','$m_no','$p_adrr','$pm_adrr','$city','$pin','$state','$country','$regn_no','$branch','$course','$r_no','$email','$pwd',1,'" . $hobby . "','$other_hobby','$tempimg','$gender','$x1','$x2','$x3','$x4','$x5','$x6','$x7','$x8','$x9')";
+			 	}
+			 	else
+			 	{
+
+			 			$query1="DELETE FROM student_details WHERE regn_no='$regn_no' or email='$email'";
+
+ 		    		$result1=mysqli_query($conn,$query1);
+ 		    		if(!$result1){
+						$message = "Deletion failed";
+						die("<b><b>Registration Failed.</b></b>");
+					}
+			   	
+			   		$other_hobby=$_POST['other'];
+			 			$query = "INSERT INTO student_details(f_name,l_name,date,age,m_no,p_addr,pm_addr,city,pin,state,country,regn_no,branch,course,roll_no,email,pwd,status,hobby,other_hobby,image,gender,xb,xp,xyp,xiib,xiip,xiiyp,ugb,ugbp,ugyp) VALUES ('$f_name','$l_name','$dat','$age','$m_no','$p_adrr','$pm_adrr','$city','$pin','$state','$country','$regn_no','$branch','$course','$r_no','$email','$pwd',1,'" . $hobby . "','$other_hobby','$img','$gender','$x1','$x2','$x3','$x4','$x5','$x6','$x7','$x8','$x9')";
+			 	}
+
+			 	$result = mysqli_query($conn,$query);
 
 
 			   	

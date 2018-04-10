@@ -112,8 +112,10 @@
 					<tr>
 						<td>GENDER:</td>
 						<td>
-							Male <input type="radio" name="Gender" value="Male" />
-							Female <input type="radio" name="Gender" value="Female" />
+							Male <input type="radio" name="gender" value="Male"
+							<?php echo ($row2['gender'] == 'Male')?'checked':'';?> />
+							Female <input type="radio" name="gender" value="Female"
+							<?php echo ($row2['gender'] == 'Female')?'checked':'';?>/>
 						</td>
 					</tr>
 					<!--- Address -->
@@ -190,38 +192,38 @@
 				<tr>
 					<!--<td align="center">1</td> !-->
 					<td align="center">Class X</td>
-					<td align="center"><input type="text" name="ClassX_Board" maxlength="30" /></td>
-					<td align="center"><input type="text" name="ClassX_Percentage" maxlength="30" /></td>
-					<td align="center"><input type="text" name="ClassX_YrOfPassing" maxlength="30" /></td>
+					<td align="center"><input type="text" name="xb" maxlength="30" value="<?php  echo $row2['xb'] ?>"/></td>
+					<td align="center"><input type="text" name="xp" maxlength="30" value="<?php  echo $row2['xp'] ?>"/></td>
+					<td align="center"><input type="text" name="xyp" maxlength="30" value="<?php  echo $row2['xyp'] ?>"/></td>
 				</tr>
 				<tr>
 					<!--<td align="center">2</td> !-->
 					<td align="center">Class XII</td>
-					<td align="center"><input type="text" name="ClassXII_Board" maxlength="30" /></td>
-					<td align="center"><input type="text" name="ClassXII_Percentage" maxlength="30" /></td>
-					<td align="center"><input type="text" name="ClassXII_YrOfPassing" maxlength="30" /></td>
+					<td align="center"><input type="text" name="xiib" maxlength="30" value="<?php  echo $row2['xiib'] ?>"/></td>
+					<td align="center"><input type="text" name="xiip" maxlength="30" value="<?php  echo $row2['xiip'] ?>"/></td>
+					<td align="center"><input type="text" name="xiiyp" maxlength="30" value="<?php  echo $row2['xiiyp'] ?>"/></td>
 				</tr>
 				<tr>
 					<!--<td align="center">3</td> !-->
 					<td align="center">Under Graduation</td>
-					<td align="center"><input type="text" name="ug_board" maxlength="30" /></td>
-					<td align="center"><input type="text" name="ug_percentage" maxlength="30" /></td>
-					<td align="center"><input type="text" name="ug_yrofpassing" maxlength="30" /></td>
+					<td align="center"><input type="text" name="ugb" maxlength="30" value="<?php  echo $row2['ugb'] ?>"/></td>
+					<td align="center"><input type="text" name="ugp" maxlength="30" value="<?php  echo $row2['ugbp'] ?>"/></td>
+					<td align="center"><input type="text" name="ugyp" maxlength="30" value="<?php  echo $row2['ugyp'] ?>"/></td>
 				</tr>
 				<tr>
 					<!--<td align="center">4</td> !-->
 					<td align="center">Post Graduation</td>
-					<td align="center"><input type="text" name="pg_board" maxlength="30" /></td>
-					<td align="center"><input type="text" name="pg_percentage" maxlength="30" /></td>
-					<td align="center"><input type="text" name="pg_yrofpassing" maxlength="30" /></td>
+					<td align="center"><input type="text" name="pgb" maxlength="30" /></td>
+					<td align="center"><input type="text" name="pgp" maxlength="30" /></td>
+					<td align="center"><input type="text" name="pgyp" maxlength="30" /></td>
 				</tr>
 			</table>
 			<table>
 				<tr>
 					<td colspan="2">COURSES APPLIED FOR: </td>
 					<td>
-						B.Tech<input type="radio" name="course" value="B.Tech">&nbsp;
-						M.Tech<input type="radio" name="course" value="M.Tech">&nbsp;
+						B.Tech<input type="radio" name="course" value="B.Tech" <?php echo ($row2['course']=='B.Tech'?'checked':'')?> />&nbsp;
+						M.Tech<input type="radio" name="course" value="M.Tech" <?php echo ($row2['course']=='M.Tech'?'checked':'')?> />&nbsp;
 					</td>
 				</tr>
 				<br>
@@ -229,15 +231,16 @@
 					<td colspan="2">BRANCH</td>
 					<td colspan="2">
 						<select name="branch">
+							<option value="<?php echo $row2['branch'] ?>"><?php echo $row2['branch'] ?></option>
 							<option value="0">--Select--</option>
-							<option value="BT">Biotechnology</option>
-							<option value="CHE">CHEMICAL ENGINEERING</option>
-							<option value="CIV">Civil engineering</option>
-							<option value="CSE">Computer Science and engineering</option>
-							<option value="ECE">Electronics and communication Engineering</option>
-							<option value="IT">Information Technology</option>
-							<option value="ME">Mechanical engineering</option>
-							<option value="MME">Metallurgical and materials engineering</option>
+							<option value="BT" <?php if ($row2['branch'] == "BT") echo "selected='selected'";?> >Biotechnology</option>
+							<option value="CHE" <?php if ($row2['branch'] == "CHE") echo "selected='selected'";?>>CHEMICAL ENGINEERING</option>
+							<option value="CIV" <?php if ($row2['branch'] == "CIV") echo "selected='selected'";?>>Civil engineering</option>
+							<option value="CSE" <?php if ($row2['branch'] == "CSE") echo "selected='selected'";?>>Computer Science and engineering</option>
+							<option value="ECE" <?php if ($row2['branch'] == "ECE") echo "selected='selected'";?>>Electronics and communication Engineering</option>
+							<option value="IT" <?php if ($row2['branch'] == "IT") echo "selected='selected'";?>>Information Technology</option>
+							<option value="ME" <?php if ($row2['branch'] == "ME") echo "selected='selected'";?>>Mechanical engineering</option>
+							<option value="MME" <?php if ($row2['branch'] == "MME") echo "selected='selected'";?>>Metallurgical and materials engineering</option>
 						</select>
 					</td>
 				</tr>
@@ -301,7 +304,7 @@
 				<br>	
 			</table>
 			<div class="buttons">
-				<input  type="file" name="image" id="image" accept="image/*" value="<?php  echo $row2['image'] ?>">
+				<input  type="file" name="image" id="image" accept="image/*">
 				<button type="submit" name="submit">Submit</button>
 				<button type="reset">Reset</button>
 			</div>

@@ -20,8 +20,12 @@ function email_out(){
 	var regex = new RegExp('[A-Za-z0-9_+\.~!#%&]+@[A-Za-z0-9_+\.~!#%&]+\.[A-Za-z0-9_+\.~!#%&]+');
 	if (!x.match(regex))
 	{
-		alert("Invalid Email id");
+		document.getElementById('errors').innerHTML="Invalid Email id";
 		return false;
+	}
+	else
+	{
+		document.getElementById('errors').innerHTML="";
 	}
 	return true;
 }

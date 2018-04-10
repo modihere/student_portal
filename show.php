@@ -6,14 +6,9 @@
 
 <?php
 	// print_r($_SESSION);
-	if(!confirm_logged_in()) redirect_to("user_login.php");
+	if(!confirm_logged_in()) redirect_to("admin_login.php");
 ?>
 <?php
-	// echo $_SESSION['Email'];
-	// $index = $_SESSION['user_id'];
-	// $query = "SELECT * FROM student_details ";
-	// $query .= "WHERE email = '$_SESSION['Email']' ";
-	// echo "string";
 	$k=$_SESSION['Email'];
 	$reg=$_GET['regno'];
 	$query = "SELECT * FROM student_details WHERE regn_no='$reg'";
@@ -61,6 +56,9 @@
 						<td> <i> Age: </i></td><td><?php 	echo $row['age']; ?></td>
 					</tr>
 					<tr>	
+						<td> <i> Gender: </i></td><td><?php 	echo $row['gender']; ?></td>
+					</tr>
+					<tr>	
 						<td> <i> Permanent Address: </i></td><td><?php 	echo $row['p_addr']; ?></td>
 					</tr>
 					<tr>	
@@ -91,40 +89,40 @@
 						<th>CLASS X</th>
 					</tr>
 					<tr>
-						<td>Board</td><td>CISCE</td>
+						<td>Board</td><td><?php 	echo $row['xb']; ?></td>
 					</tr>
 					<tr>
-						<td>Percentage</td><td>91.4%
+						<td>Percentage</td><td><?php 	echo $row['xp']; ?>
 						</td>
 					</tr>
 					<tr>
-						<td>Year of Passing</td><td>2013</td>
+						<td>Year of Passing</td><td><?php 	echo $row['xyp']; ?></td>
 					</tr>
 					<tr>
 						<th>CLASS XII</th>
 					</tr>
 					<tr>
-						<td>Board</td><td></td>
+						<td>Board</td><td><?php 	echo $row['xiib']; ?></td>
 					</tr>
 					<tr>
-						<td>Percentage</td><td>
+						<td>Percentage</td><td><?php 	echo $row['xiip']; ?>
 						</td>
 					</tr>
 					<tr>
-						<td>Year of Passing</td><td></td>
+						<td>Year of Passing</td><td><?php 	echo $row['xiiyp']; ?></td>
 					</tr>
 					<tr>
 						<th>UNDERGRADUATION</th>
 					</tr>
 					<tr>
-						<td>Board</td><td></td>
+						<td>Board</td><td><?php 	echo $row['ugb']; ?></td>
 					</tr>
 					<tr>
-						<td>Percentage</td><td>
+						<td>Percentage</td><td><?php 	echo $row['ugbp']; ?>
 						</td>
 					</tr>
 					<tr>
-						<td>Year of Passing</td><td></td>
+						<td>Year of Passing</td><td><?php 	echo $row['ugyp']; ?></td>
 					</tr>
 			
 			</table>

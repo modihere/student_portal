@@ -42,7 +42,7 @@
         redirect_to("user.php");
       } else {
         $message = "<h4><b>Wrong Email or password or not accepted<b></h4>";
-        echo $message;
+        
       }
     }
 ?>     
@@ -141,12 +141,14 @@
             <td>EMAIL ID:</td>
             <td><input type="text" required name="Email_Id" maxlength="50" placeholder="eg:example@gmail.com" onfocusin="email_in()" onfocusout="email_out()"/>
             </td>
+            <td id="errors" style="color: red"></td>
           </tr>
           <tr>
             <td>Password :</td>
             <td><input type="password" required name="password" maxlength="50" placeholder="*******"/></td>
           </tr>
       </table>
+      <h3 align="right"> <?php echo $message ?></h3>
       <div class="buttons">
         <button type="submit" name="submit">Submit</button>
         <button type="reset">Reset</button>

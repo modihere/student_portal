@@ -18,8 +18,12 @@ function name_out(){
 	
 	if(x_len < 4 || x_len >20)
 	{
-		alert("Name must be between 5 and 20 characters!")
+		document.getElementById('errors').innerHTML="First name must be between 4 and 20 characters";
 		return false;
+	}
+	else
+	{
+		document.getElementById('errors').innerHTML="";
 	}
 }
 
@@ -27,7 +31,7 @@ function name_in(){
 	var x = document.forms["Student_signup"]["First_Name"].value;
 	if(x == "")
 	{
-		document.forms["Student_signup"]["First_Name"].style.backgroundColor ="#008B8B";
+		document.forms["Student_signup"]["First_Name"].style.backgroundColor ="white";
 		document.forms["Student_signup"]["First_Name"].placeholder = "Your Name";
 		document.forms["Student_signup"]["First_Name"].style.border ="none";
 	}
@@ -53,8 +57,12 @@ function name1_out(){
 	
 	if(x_len < 4 || x_len >20)
 	{
-		alert("Name must be between 5 and 20 characters!")
+		document.getElementById('errors1').innerHTML="Last name must be between 4 and 20 characters";
 		return false;
+	}
+	else
+	{
+		document.getElementById('errors1').innerHTML="";
 	}
 }
 
@@ -62,7 +70,7 @@ function name1_in(){
 	var x = document.forms["Student_signup"]["Last_Name"].value;
 	if(x == "")
 	{
-		document.forms["Student_signup"]["Last_Name"].style.backgroundColor ="#008B8B";
+		document.forms["Student_signup"]["Last_Name"].style.backgroundColor ="white";
 		document.forms["Student_signup"]["Last_Name"].placeholder = "Your Name";
 		document.forms["Student_signup"]["Last_Name"].style.border ="none";
 	}
@@ -72,7 +80,12 @@ function dob_out(){
 	var x = document.forms["Student_signup"]["dob"].value;
 	if(x=="")
 	{
-		alert("Please enter a date")
+		document.getElementById('errors3').innerHTML="Enter a valid date";
+		return false;
+	}
+	else
+	{
+		document.getElementById('errors3').innerHTML="";
 	}
 	return false;
 }
@@ -81,7 +94,12 @@ function branch_out(){
 	var x = document.forms["Student_signup"]["branch"].value;
 	if(x=="")
 	{
-		alert("please select a proper branch");
+		document.getElementById('errors4').innerHTML="Select a proper branch";
+		return false;
+	}
+	else
+	{
+		document.getElementById('errors4').innerHTML="";
 	}
 	return false;
 }
@@ -104,7 +122,7 @@ function email_in(){
 	var x = document.forms["Student_signup"]["Email_Id"].value;
 	if(x == "")
 	{
-		document.forms["Student_signup"]["Email_Id"].style.backgroundColor ="#008B8B";
+		document.forms["Student_signup"]["Email_Id"].style.backgroundColor ="white";
 		document.forms["Student_signup"]["Email_Id"].placeholder = "*****@gmail.com";
 		document.forms["Student_signup"]["Email_Id"].style.border ="none";
 	}
@@ -122,8 +140,12 @@ function email_out(){
 	var regex = new RegExp('[A-Za-z0-9_+\.~!#%&]+@[A-Za-z0-9_+\.~!#%&]+\.[A-Za-z0-9_+\.~!#%&]+');
 	if (!x.match(regex))
 	{
-		alert("Invalid Email id");
+		document.getElementById('errors5').innerHTML="Invalid Email id";
 		return false;
+	}
+	else
+	{
+		document.getElementById('errors5').innerHTML="";
 	}
 	return true;
 }
@@ -132,7 +154,7 @@ function pass_in(){
 	var x = document.forms["Student_signup"]["password"].value;
 	if(x == "")
 	{
-		document.forms["Student_signup"]["password"].style.backgroundColor ="#008B8B";
+		document.forms["Student_signup"]["password"].style.backgroundColor ="white";
 		document.forms["Student_signup"]["password"].placeholder = "*********";
 		document.forms["Student_signup"]["password"].style.border ="none";
 	}
@@ -149,9 +171,12 @@ function pass_out(){
     }
 	if(x_len < 8 || x_len >20)
 	{
-		alert("Please enter the password in range of 8-20 characters");
+		document.getElementById('errors6').innerHTML="Password must be between 8 and 20 characters";
 		return false;
-		
+	}
+	else
+	{
+		document.getElementById('errors6').innerHTML="";
 	}
 }
 
@@ -159,7 +184,7 @@ function repass_in(){
 	var x = document.forms["Student_signup"]["cpassword"].value;
 	if(x == "")
 	{
-		document.forms["Student_signup"]["cpassword"].style.backgroundColor ="#008B8B";
+		document.forms["Student_signup"]["cpassword"].style.backgroundColor ="white";
 		document.forms["Student_signup"]["cpassword"].placeholder = "*********";
 		document.forms["Student_signup"]["cpassword"].style.border ="none";
 	}
@@ -176,8 +201,12 @@ function repass_out(){
     }
 	if(x!=y)
 	{
-		alert("passwords do not match!!");
+		document.getElementById('errors7').innerHTML="Password do not match";
 		return false;
+	}
+	else
+	{
+		document.getElementById('errors7').innerHTML="";
 	}
 }
 
@@ -185,7 +214,7 @@ function Mobile_Number_in(){
 	var x = document.forms["Student_signup"]["Mobile_Number"].value;
 	if(x == "")
 	{
-		document.forms["Student_signup"]["Mobile_Number"].style.backgroundColor ="#008B8B";
+		document.forms["Student_signup"]["Mobile_Number"].style.backgroundColor ="white";
 		document.forms["Student_signup"]["Mobile_Number"].placeholder = "94930XXXXX";
 		document.forms["Student_signup"]["Mobile_Number"].style.border ="none";
 	}

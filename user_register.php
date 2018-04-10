@@ -49,7 +49,11 @@
 						<td>FIRST NAME:</td>
 						<td><input type="text"  name="First_Name" maxlength="30" placeholder="First Name" onfocusin="name_in()" onfocusout="name_out()" required="required" />
 						</td>
+
 					</tr>
+				
+						<td></td><td id="errors" style="color: red"></td>
+					
 		 
 					<!--- Last Name -->
 					<tr>	
@@ -58,11 +62,14 @@
 						</td>
 					</tr>
 
+					<td></td><td id="errors1" style="color: red"></td>
+
 					<!--- Date Of Birth -->
 					<tr>
 						<td>DATE OF BIRTH:</td>
 						<td><input type="date"  name="dob" placeholder="dd/mm/yyyy" onfocusout="dob_out()" /></td>
 					</tr>
+					<td></td><td id="errors3" style="color: red"></td>
 					<tr>	
 						<td>AGE:</td>
 						<td><input type="text" name="age" maxlength="10" placeholder="age" onclick="getage()" />
@@ -77,8 +84,8 @@
 					<tr>
 						<td>GENDER:</td>
 						<td>
-							Male <input type="radio" name="Gender" value="Male" />
-							Female <input type="radio" name="Gender" value="Female" />
+							Male <input type="radio" name="gender" value="Male" />&nbsp;
+							Female <input type="radio" name="gender" value="Female" />&nbsp;
 						</td>
 					</tr>
 					<!--- Address -->
@@ -155,30 +162,30 @@
 				<tr>
 					<!--<td align="center">1</td> !-->
 					<td align="center">Class X</td>
-					<td align="center"><input type="text" name="ClassX_Board" maxlength="30" /></td>
-					<td align="center"><input type="text" name="ClassX_Percentage" maxlength="30" /></td>
-					<td align="center"><input type="text" name="ClassX_YrOfPassing" maxlength="30" /></td>
+					<td align="center"><input type="text" name="xb" maxlength="30" /></td>
+					<td align="center"><input type="text" name="xp" maxlength="30" /></td>
+					<td align="center"><input type="text" name="xyp" maxlength="30" /></td>
 				</tr>
 				<tr>
 					<!--<td align="center">2</td> !-->
 					<td align="center">Class XII</td>
-					<td align="center"><input type="text" name="ClassXII_Board" maxlength="30" /></td>
-					<td align="center"><input type="text" name="ClassXII_Percentage" maxlength="30" /></td>
-					<td align="center"><input type="text" name="ClassXII_YrOfPassing" maxlength="30" /></td>
+					<td align="center"><input type="text" name="xiib" maxlength="30" /></td>
+					<td align="center"><input type="text" name="xiip" maxlength="30" /></td>
+					<td align="center"><input type="text" name="xiiyp" maxlength="30" /></td>
 				</tr>
 				<tr>
 					<!--<td align="center">3</td> !-->
 					<td align="center">Under Graduation</td>
-					<td align="center"><input type="text" name="ug_board" maxlength="30" /></td>
-					<td align="center"><input type="text" name="ug_percentage" maxlength="30" /></td>
-					<td align="center"><input type="text" name="ug_yrofpassing" maxlength="30" /></td>
+					<td align="center"><input type="text" name="ugb" maxlength="30" /></td>
+					<td align="center"><input type="text" name="ugp" maxlength="30" /></td>
+					<td align="center"><input type="text" name="ugyp" maxlength="30" /></td>
 				</tr>
 				<tr>
 					<!--<td align="center">4</td> !-->
 					<td align="center">Post Graduation</td>
-					<td align="center"><input type="text" name="pg_board" maxlength="30" /></td>
-					<td align="center"><input type="text" name="pg_percentage" maxlength="30" /></td>
-					<td align="center"><input type="text" name="pg_yrofpassing" maxlength="30" /></td>
+					<td align="center"><input type="text" name="pgb" maxlength="30" /></td>
+					<td align="center"><input type="text" name="pgp" maxlength="30" /></td>
+					<td align="center"><input type="text" name="pgyp" maxlength="30" /></td>
 				</tr>
 			</table>
 			<table>
@@ -193,8 +200,8 @@
 				<tr>
 					<td colspan="2">BRANCH</td>
 					<td colspan="2">
-						<select name="branch">
-							<option value="0">--Select--</option>
+						<select name="branch" onclick="branch_out()" >
+							<option value="">--Select--</option>
 							<option value="BT">Biotechnology</option>
 							<option value="CHE">CHEMICAL ENGINEERING</option>
 							<option value="CIV">Civil engineering</option>
@@ -206,10 +213,11 @@
 						</select>
 					</td>
 				</tr>
+				<td></td><td></td><td id="errors4" style="color: red"></td>
 				<!--- Registration No -->
 				<tr>
 					<td colspan="2">REGISTRATION NO</td>
-					<td colspan="2"><input type="text"  placeholder="" name="regn_no" maxlength="50" pattern="[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]" /></td>
+					<td colspan="2"><input type="number"  placeholder="" name="regn_no" maxlength="50" pattern="[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]" onclick="id_in()" /></td>
 				</tr>
 				<!--- Roll No-->
 				<tr>
@@ -250,18 +258,21 @@
 					<td colspan="2">EMAIL ID</td>
 					<td colspan="2"><input placeholder="example@gmail.com"  type="text" name="Email_Id" maxlength="50" onfocusin="email_in()" onfocusout="email_out()" required="required"></td>
 				</tr>
+				<td></td><td></td><td id="errors5" style="color: red"></td>
 				<br>
 				<!--- Submit and Reset -->
 				<tr>
 					<td colspan="2">PASSWORD</td>
-					<td colspan="2"><input type="password"  id="pwd" name="password" maxlength="25" placeholder="********"   required="required"></td>
+					<td colspan="2"><input type="password"  id="pwd" name="password" maxlength="25" placeholder="********"   onfocusin="pass_in()" onfocusout="pass_out()" required="required"></td>
 				</tr>
+				<td></td><td></td><td id="errors6" style="color: red"></td>
 				<br>
 				<tr>
 					<td colspan="2">CONFIRM PASSWORD</td>
-					<td colspan="2"><input type="password"  id="cpwd" name="cpassword" maxlength="25" placeholder="********"  required="required"></td>
+					<td colspan="2"><input type="password"  id="cpwd" name="cpassword" maxlength="25" placeholder="********" onfocusin="repass_in()" onfocusout="repass_out()" required="required"></td>
 
 				</tr>
+				<td></td><td></td><td id="errors7" style="color: red"></td>
 
 				<br>	
 

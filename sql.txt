@@ -16,6 +16,11 @@ ALTER TABLE `student_details` ADD `other_hobby` VARCHAR(255) AFTER `id`;
 ALTER TABLE `student_details` ADD `image` VARCHAR(255) AFTER `id`;
 
 
+ALTER TABLE `student_details` ADD `gender` VARCHAR(255) AFTER `id`;
+
+ALTER TABLE `student_details` ADD `xb` VARCHAR(255) AFTER `id`;
+
+
 CREATE TABLE admin_login(id INT NOT NULL AUTO_INCREMENT,email VARCHAR(100) NOT NULL,pwd VARCHAR(40) NOT NULL,PRIMARY KEY ( id ) );
 
 
